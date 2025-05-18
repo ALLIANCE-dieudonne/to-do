@@ -1,0 +1,56 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "nodemon --exec ts-node src/index.ts",
+    "buil": "tsc",
+    "lint": "eslint . --ext .ts",
+    "serve": "npx ts-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma:gen": "npx prisma generate --schema src/prisma/schema.prisma",
+    "prisma:migrate": "npx prisma migrate dev --schema=./src/prisma/schema.prisma --name=init",
+    "prisma:studio": "npx prisma studio --schema src/prisma/schema.prisma",
+    "prisma:all": "yarn prisma:migrate && yarn prisma:gen",
+    "prisma:seed": "ts-node src/seeders/seed.ts",
+    "swagger:generate": "ts-node src/swagger/index.ts"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.18",
+    "@types/swagger-ui-express": "^4.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "^9.27.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.8.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "reflect-metadata": "^0.2.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
