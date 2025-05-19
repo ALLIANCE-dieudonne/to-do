@@ -16,7 +16,7 @@ interface TaskState {
   deleteTask: (id: string) => Promise<void>;
   setCurrentTask: (task: Task | null) => void;
   setFilters: (filters: TaskFilters) => void;
-  clearError: () => void;
+  clearError: () => void; 
 }
 
 export const useTaskStore = create<TaskState>((set, get) => ({

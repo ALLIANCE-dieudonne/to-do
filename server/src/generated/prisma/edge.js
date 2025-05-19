@@ -152,7 +152,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\filal\\OneDrive\\Documents\\NE prep\\my temps\\to do app\\server\\src\\generated\\prisma",
+      "value": "C:\\Users\\filal\\Documents\\NE-temp\\to do app\\server\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -166,7 +166,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\filal\\OneDrive\\Documents\\NE prep\\my temps\\to do app\\server\\src\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\filal\\Documents\\NE-temp\\to do app\\server\\src\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

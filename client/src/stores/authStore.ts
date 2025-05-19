@@ -30,7 +30,8 @@ export const useAuthStore = create<AuthState>((set) => ({
         { withCredentials: true }
       );
       
-      const { user, token } = response.data;
+      const { user, token } = response.data.data;
+
       localStorage.setItem('token', token);
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       
@@ -51,7 +52,8 @@ export const useAuthStore = create<AuthState>((set) => ({
         data
       );
       
-      const { user, token } = response.data;
+
+      const { user, token } = response.data?.data;
       localStorage.setItem('token', token);
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       
@@ -80,11 +82,10 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       set({ isLoading: true });
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      const response = await axios.get<User>(`${API_URL}/auth/me`, {
+      const response = await axios.get<{data:User}>(`${API_URL}/user/me`, {
         withCredentials: true
       });
-      
-      set({ user: response.data, isAuthenticated: true, isLoading: false });
+      set({ user: response.data.data, isAuthenticated: true, isLoading: false });
     } catch (error) {
       localStorage.removeItem('token');
       delete axios.defaults.headers.common['Authorization'];
